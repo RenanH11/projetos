@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style> 
+ 
+        /*Imagem de fundo*/
+        body{
+            background-attachment: fixed;
+            min-height: 500px;
+            background-image: url(tent2.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        /*Espaçamento entre os paragrafos no formulário*/
+    .formdiv1{
+        margin-top: 2em;
+    }
+
+    /*Deixar o form bonito*/
+    #form1{
+        /*Centralizar form*/
+        margin: 100px auto;
+        /*deixar o form como um quadrado*/
+        height: 400px;
+        width: 400px;
+        /*tamanho do quadrado*/
+        padding: 1em;
+        /*tamanho da borda, estilo e cor*/
+        border: 1px solid #8b8b8b;
+        /*arredondar os cantos*/
+        border-radius: 1em;
+        /*cor de fundo do*/
+        background-color: #ccc;
+    }
+    
+    /*deixar as letra bonitinha na esquerda*/
+    label{
+        display: inline-block;
+        width: 150px;
+        text-align: left;
+    }
+
+    /*deixa as caixas no mesmo tamanho*/
+    .caixatxtform1, #nascimentoform1{
+        width: 172px;
+    }
+   
+    /*deixa os botão centralizado*/
+    #formbutton{
+        width: fit-content;
+        margin: 2em auto;
+    }
+
+    </style>
+    <script>
+        function informations() {
+            let name1 = document.getElementById("primeironomeform1").value;
+            let name2 = document.getElementById("segundonomeform1").value;
+            let date1 = document.getElementById("nascimentoform1").value;
+            let email1 = document.getElementById("emailform1").value;
+            let number1 = document.getElementById("numeroform1").value;
+            if(name1 != false && name2 != false && date1 != false && email1 != false && number1 != false){
+            alert('Seu nome é ' + name1 + ' ' + name2 + ', Nasceu na data ' + date1 + 'E seus meios de comunicação são Email "' + email1 + '" e Telefone "' + number1 + '"');
+            alert('Seu formulário foi enviado com sucesso');
+            }
+            else{
+                alert("Formulário não foi preenchido corretamente, por favor verifique suas informações");
+            }
+        }
+        
+    </script>
+</head>
+<body>
+
+    <form action="" method="post" id="form1">
+        <h1 style="text-align: center;">Formulário</h1>
+        <div class="formdiv1">
+        <label class="caixatxtform1" for="primeironome">Primeiro Nome:</label>
+        <input type="text" id="primeironomeform1" placeholder="Primeiro nome">
+        </div>
+        <div class="formdiv1">
+        <label class="caixatxtform1" for="segundonome">Segundo Nome:</label>
+        <input type="text" id="segundonomeform1" placeholder="Segundo nome">
+        </div>
+        <div class="formdiv1">
+        <label class="caixatxtform1" for="nascimento">Data de Nascimento:</label>
+        <input type="date" id="nascimentoform1">
+        </div>
+        <div class="formdiv1">  
+        <label class="caixatxtform1" for="email">Email:</label>
+        <input type="email" id="emailform1" placeholder="exemple@exemple.com">
+        </div>
+        <div class="formdiv1">
+        <label class="caixatxtform1" for="numerotelefone">Número de Telefone:</label>
+        <input type="number" id="numeroform1" placeholder="+55 98 123456789">
+        </div>
+        <div class="formdiv1" id="formbutton">
+        <input type="submit" value="Enviar" onclick="informations()">
+        <input type="reset" value="Resetar">
+        </div>
+      </form>
+    
+</body>
+</html>
