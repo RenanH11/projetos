@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de contato</title>
+    <style>
+        /* Reset básico para garantir consistência entre navegadores */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background: #45a049;
+        }
+    </style>
+    <script>
+        function verify(){
+        var nome = document.getElementById('nomenome').value;
+        var email = document.getElementById('emailemail').value;
+        var mensagem = document.getElementById('msgmsg').value;
+        const regexInsano = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (nome == "") {
+            alert("Escreva seu nome!");
+            return false;
+        }
+        if (email == "" || regexInsano.test(email) == false) {
+            alert("Preencha o Email corretamente!");
+            return false;
+        }
+        if (mensagem == ""){
+            alert("É necessario preenchimento da mensagem!");
+            return false;
+        }else{
+            alert("Enviado com sucesso!");
+            return true;
+        }
+    }
+
+
+    </script>
+</head>
+<body>
+    <form action="#" onsubmit="verify()">
+        <div>
+            <label for="nomenome">Nome:</label>
+            <input type="text" name="nomenome" id="nomenome">
+        </div>
+        <div>
+            <label for="emailemail">Email:</label>
+            <input type="text" name="emailemail" id="emailemail">
+        </div>
+        <div>
+            <label for="msgmsg">Em que posso ajudar?</label>
+            <textarea name="msgmsg" id="msgmsg"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+</body>
+</html>
