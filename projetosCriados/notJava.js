@@ -25,7 +25,10 @@ async function buildProjects(){
     if (jsonInsano != undefined) {
         jsonInsano.forEach(e => {
             let templateCopia = template.content.cloneNode(true);
-            let titleObj = templateCopia.querySelector("#title").innerHTML = e.projeto;
+            let tituloTemplate = templateCopia.querySelector("#title")
+            tituloTemplate.innerHTML = e.projeto;
+            tituloTemplate.href = e.link
+            templateCopia.querySelector("#dsc").innerHTML = e.desc
             wholeBox.appendChild(templateCopia);
         });
         

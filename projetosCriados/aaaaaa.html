@@ -5,13 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="notJava.js"></script>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+}
+
+#wholeBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+#wholeBox div {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#wholeBox div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#wholeBox img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    border-radius: 5px 5px 0 0;
+}
+
+#wholeBox #title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#wholeBox span {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Add a simple transition for link hover */
+#wholeBox #title:hover {
+    color: #007bff;
+}
+
+h1 {
+            margin: 20px 0;
+            color: #333;
+        }
+
+    </style>
 </head>
 <body>
+    <h1>Projetos Criados</h1>
     <template id="child-project">
         <div>
-            <img src="" alt="">
+            <img src="" alt="project image">
             <a id="title">Title</a>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vel a porro harum quisquam fugiat voluptatum nisi itaque voluptatibus provident? Quibusdam explicabo tempore sit perspiciatis perferendis placeat animi hic natus.</span>
+            <br>
+            <span id="dsc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vel a porro harum quisquam fugiat voluptatum nisi itaque voluptatibus provident? Quibusdam explicabo tempore sit perspiciatis perferendis placeat animi hic natus.</span>
         </div>
     </template>
     <div id="wholeBox">
